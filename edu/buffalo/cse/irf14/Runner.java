@@ -15,55 +15,65 @@ import edu.buffalo.cse.irf14.index.IndexerException;
  * @author nikhillo
  *
  */
-public class Runner {
+public class Runner
+{
 
 	/**
 	 * 
 	 */
-	public Runner() {
+	public Runner()
+	{
 		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		String ipDir = args[0];
 		String indexDir = args[1];
-		//more? idk!
-		
+		// more? idk!
+
 		File ipDirectory = new File(ipDir);
 		String[] catDirectories = ipDirectory.list();
-		
+
 		String[] files;
 		File dir;
-		
+
 		Document d = null;
 		IndexWriter writer = new IndexWriter(indexDir);
-		
-		try {
-			for (String cat : catDirectories) {
-				dir = new File(ipDir+ File.separator+ cat);
+
+		try
+		{
+			for (String cat : catDirectories)
+			{
+				dir = new File(ipDir + File.separator + cat);
 				files = dir.list();
-				
+
 				if (files == null)
 					continue;
-				
-				for (String f : files) {
-					try {
-						d = Parser.parse(dir.getAbsolutePath() + File.separator +f);
+
+				for (String f : files)
+				{
+					try
+					{
+						d = Parser.parse(dir.getAbsolutePath() + File.separator
+								+ f);
 						writer.addDocument(d);
-					} catch (ParserException e) {
+					} catch (ParserException e)
+					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} 
-					
+					}
+
 				}
-				
+
 			}
-			
+
 			writer.close();
-		} catch (IndexerException e) {
+		} catch (IndexerException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

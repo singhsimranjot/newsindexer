@@ -9,7 +9,8 @@ import edu.buffalo.cse.irf14.document.test.DocumentSuite;
 import edu.buffalo.cse.irf14.index.test.IndexerSuite;
 
 @RunWith(Suite.class)
-@SuiteClasses({AnalysisSuite.class, DocumentSuite.class, IndexerSuite.class})
-public class AllTests {
+@SuiteClasses({ AnalysisSuite.class, DocumentSuite.class, IndexerSuite.class })
+public class AllTests
+{
 
 }
