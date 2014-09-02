@@ -11,6 +11,7 @@ public class Tester {
 	public static void main(String[] args) {
 		JUnitCore core = new JUnitCore();
 		core.run(new Computer(), AllTests.class);
+		// Mohit is an asshole
 
 	}
 
