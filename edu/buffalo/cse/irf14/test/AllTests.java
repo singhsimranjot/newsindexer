@@ -12,5 +12,11 @@ import edu.buffalo.cse.irf14.index.test.IndexerSuite;
 @SuiteClasses({ AnalysisSuite.class, DocumentSuite.class, IndexerSuite.class })
 public class AllTests
 {
+	
+	
+	public static void main(String args[]){
+		
+		System.out.println("Mohit"); 
+	}
 
 }
